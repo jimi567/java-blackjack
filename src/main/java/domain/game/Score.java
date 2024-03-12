@@ -45,14 +45,14 @@ public class Score implements Comparable<Score> {
         return SCORE_POOL.get(value);
     }
 
-    private static void validateRange(int value) {
+    private static void validateRange(final int value) {
         if (value < MINIMUM_SCORE || MAXIMUM_SCORE < value) {
             throw new IllegalArgumentException(INVALID_SCORE_MESSAGE);
         }
         ;
     }
 
-    private static boolean isBustWithAce(int sum, int aceCount) {
+    private static boolean isBustWithAce(final int sum, final int aceCount) {
         return sum > BLACK_JACK_SCORE && aceCount > 0;
     }
 
@@ -65,11 +65,11 @@ public class Score implements Comparable<Score> {
     }
 
     @Override
-    public int compareTo(Score that) {
+    public int compareTo(final Score that) {
         return Integer.compare(this.value, that.value);
     }
 
-    public int compareTo(int that) {
+    public int compareTo(final int that) {
         return Integer.compare(this.value, that);
     }
 
