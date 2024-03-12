@@ -1,13 +1,13 @@
 package domain.player;
 
+import static domain.game.Score.BLACK_JACK_SCORE;
+
 import domain.card.Card;
 import domain.card.Hand;
 import domain.game.Score;
 import java.util.List;
 
 public class Player {
-
-    public static final int BLACK_JACK = 21;
 
     private final Name name;
     private final Hand hand;
@@ -31,7 +31,7 @@ public class Player {
     }
 
     public boolean isHittable() {
-        return getTotalScore().compareTo(BLACK_JACK) < 0;
+        return getTotalScore().compareTo(BLACK_JACK_SCORE) < 0;
     }
 
     public Score getTotalScore() {
